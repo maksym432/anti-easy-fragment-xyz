@@ -1,8 +1,0 @@
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0c1116;color:#e6edf3}
-.container{max-width:420px;margin:40px auto;padding:24px;background:#0d1117;border:1px solid #30363d;border-radius:12px}
-h1{font-size:20px;margin:0 0 8px}
-p{margin:0 0 16px;color:#8b949e}
-.form{display:flex;gap:8px;margin:10px 0}
-input{flex:1;padding:10px 12px;border:1px solid #30363d;border-radius:8px;background:#0c1116;color:#e6edf3}
-button{padding:10px 12px;border:1px solid #30363d;border-radius:8px;background:#238636;color:#fff;cursor:pointer}
-.status{margin-top:16px;font-size:14px;color:#8b949e}
